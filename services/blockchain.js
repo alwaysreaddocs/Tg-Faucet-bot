@@ -1,5 +1,4 @@
-const { ethers } = require("ethers");
-const config = require("../config/config");
+// This is where we will put all the functions that interact with the blockchain tomorrow
 
 class BlockchainService {
   constructor() {
