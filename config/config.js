@@ -38,4 +38,4 @@ function validateConfig() {
 
 validateConfig();
 
-export default config;
+module.exports = config;

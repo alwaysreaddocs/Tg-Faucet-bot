@@ -1,14 +1,14 @@
-import { ethers } from "ethers";
-import config from "../config/config.js";
-import providerService from "../services/provider.js";
-import walletService from "../services/wallet.js";
+const { ethers } = require("ethers");
+const config = require("../config/config");
+const providerService = require("../services/provider");
+const walletService = require("../services/wallet");
 
 const userLastRequest = new Map();
 
 const provider = providerService.getProvider();
 const wallet = walletService.getWallet();
 
-export default async function handler(req, res) {
+async function handler(req, res) {
   if (req.method !== "POST") {
     return res.status(200).send("Bot is running");
   }
@@ -106,3 +106,5 @@ async function sendMessage(chatId, text) {
     }),
   });
 }
+
+module.exports = handler;
